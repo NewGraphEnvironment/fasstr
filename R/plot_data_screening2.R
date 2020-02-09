@@ -137,7 +137,7 @@ plot_data_screening2 <- function(data,
            ggplot2::scale_y_continuous(breaks = scales::pretty_breaks(n = 6)) +
            ggplot2::expand_limits(y = 0) +
            ggplot2::ylab(y_axis_title) +
-           ggplot2::xlab(NULL) +
+           # ggplot2::xlab("Year") +
            ggplot2::theme_bw() +
            {if (include_title & .y != "XXXXXXX") ggplot2::ggtitle(paste(.y)) } +
            ggplot2::theme(panel.border = ggplot2::element_rect(colour = "black", fill = NA, size = 1),
