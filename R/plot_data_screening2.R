@@ -135,7 +135,7 @@ plot_data_screening2 <- function(data,
            ggplot2::scale_x_continuous(breaks = scales::pretty_breaks(n = 8))+
            {if(length(unique(flow_summary$Year)) < 5) ggplot2::scale_x_continuous(breaks = unique(flow_summary$Year))}+
            ggplot2::scale_y_continuous(breaks = scales::pretty_breaks(n = 6)) +
-           ggplot2::expand_limits(y = 0) +
+           # ggplot2::expand_limits(y = 0) +
            ggplot2::ylab(y_axis_title) +
            # ggplot2::xlab("Year") +
            ggplot2::theme_bw() +
