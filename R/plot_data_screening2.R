@@ -131,13 +131,14 @@ plot_data_screening2 <- function(data,
          ~ggplot2::ggplot(data = ., ggplot2::aes(x = Year, y = Value)) +
            ggplot2::geom_line(colour = "dodgerblue4", na.rm = TRUE) +
            ggplot2::geom_point(colour = "firebrick3", na.rm = TRUE) +
+           geom_line(aes(x = Year, y = mean(Value))) + ##add a series mean line
            ggplot2::facet_wrap(~Statistic, ncol = 2, scales = "free_y", strip.position = "top") +
            ggplot2::scale_x_continuous(breaks = scales::pretty_breaks(n = 8))+
            {if(length(unique(flow_summary$Year)) < 5) ggplot2::scale_x_continuous(breaks = unique(flow_summary$Year))}+
            ggplot2::scale_y_continuous(breaks = scales::pretty_breaks(n = 6)) +
            # ggplot2::expand_limits(y = 0) +
            ggplot2::ylab(y_axis_title) +
-           # ggplot2::xlab("Year") +
+           ggplot2::xlab(NULL) +
            ggplot2::theme_bw() +
            {if (include_title & .y != "XXXXXXX") ggplot2::ggtitle(paste(.y)) } +
            ggplot2::theme(panel.border = ggplot2::element_rect(colour = "black", fill = NA, size = 1),
